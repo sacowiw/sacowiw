@@ -12,27 +12,27 @@ tags:
 ### 取得项目的Git仓库
 ------
 
-#### 初始化
+##### 初始化
     $ git init
 
-#### 添加文件
+##### 添加文件
     $ git add *.c
     $ git add README
     $ git commit -m “初次提交"
 
-#### 克隆
+##### 克隆
     $ git clone
 
 ### 记录每次更新到仓库
 -----
 
-#### 查看文件状态
+##### 查看文件状态
     $ git status
 
-#### 跟踪新文件
+##### 跟踪新文件
     $ git add  //如果此文件已经add过，再执行此命令文件将被放到暂存区，执行后又修改文件然后提交，被提交的是add后的文件，修改的文件不会被提交，除非再次执行add
 
-#### 忽略文件
+##### 忽略文件
 
     # 此为注释 – 将被 Git 忽略
     # 忽略所有 .a 结尾的文件
@@ -48,28 +48,28 @@ tags:
     # ignore all .txt files in the doc/ directory
         doc/**/*.txt 
 
-#### 查看已暂存和未暂存的文件
+##### 查看已暂存和未暂存的文件
     $ git diff 查看未暂存的文件和已暂存文件的差别
     $ git diff --cached (--staged)  查看已暂存和上次提交文件的差别
 
-#### 提交
+##### 提交
     $ git commit -m
     $ git commit -m -a 跳过暂存区，直接把修改过的文件提交
 
-#### 移除文件
+##### 移除文件
     $ git rm 从跟踪清单移除文件连同工作目录的文件也会被删除
     $ git rm -f 从暂存区和工作目录移除文件
     $ git rm \*~ 移除所有以~结尾的文件
     $ git rm —-cached  从仓库、跟踪列表、暂存区但是工作目录的文件不会删除
 
-#### 重命名文件
+##### 重命名文件
     $ git mv file_from file_to
     等同于
     $ git mv README.txt README
     $ git rm README.txt
     $ git add README  
 
-#### 查看提交历史
+##### 查看提交历史
     $ git log 会列出所有更新记录
     $ git log -p -2 展开2条详细的更新记录
     $ git log -p —-word-diff -U1 对比单词级别的差距,U1代表上下文的行为1行
@@ -94,48 +94,48 @@ tags:
 ### 撤销操作
 -----
 
-#### 修改最后一次提交
+##### 修改最后一次提交
     $ git commit --amend
 
-#### 取消已暂存的文件
+##### 取消已暂存的文件
     $ git reset HEAD <file>… 取消暂存文件
 
-#### 撤销修改
+##### 撤销修改
     $ git checkout --<file>… 取消某个文件的修改
 
 ### 远程仓库的使用
 ----
 
-#### 查看远程仓库
+##### 查看远程仓库
     $ git remote 列出每个远程仓库远程名字
     $ git remote -v 显示每个远程仓库对应的克隆地址
 
-#### 添加远程仓库
+##### 添加远程仓库
     $ git remote add [shortname] [url]
 
-#### 从远程仓库抓取数据
+##### 从远程仓库抓取数据
     $ git fetch [remote-name]
 
-#### 推送到远程仓库
+##### 推送到远程仓库
     $ git push [remote-name] [branch-name]
 
-#### 显示远程仓库信息
+##### 显示远程仓库信息
     $ git remote show [remote-name]
 
-#### 重命名远程名字
+##### 重命名远程名字
     $ git remote rename [name] [ toname]
 
-#### 删除远程仓库
+##### 删除远程仓库
     $ git remote rm [remotename]
 
 ### 打标签
 -----
 
-#### 列出已有标签
+##### 列出已有标签
     $ git tag
     $ git tag -l “v1.2.*” 列出V1.2系列的标签
 
-#### 新建标签
+##### 新建标签
 - 轻量级 ：它就是个指向特定提交对象的引用
 - 含附注  ：存储在仓库中的一个独立对象，它有自身的校验和信息，包含着标签的名字，电子邮件地址和日期，以及标签说明，标签本身也允许使用 GNU Privacy Guard (GPG) 来签署或验证。
 
@@ -145,18 +145,18 @@ tags:
     $ git tag -s v1.5 -m 'my signed 1.5 tag' 用GPG签署标签
     $ git tag v1.4 新建一个轻量级标签
 
-#### 验证标签
+##### 验证标签
     $ git tag -v [tag-name] 验证标签
 
-#### 后期添加标签
+##### 后期添加标签
     $ git tag -a v1.4 fedg2
 
-#### 分享标签
+##### 分享标签
     $ git push origin [tagname]
     $ git push origin --tags  推送所有标签到远程仓库
    
-###技巧和窍门
+### 技巧和窍门
 -----
 
-#### Git 命令别名
+##### Git 命令别名
     $ git config --global alias.co checkout 用checkout的别名为co
